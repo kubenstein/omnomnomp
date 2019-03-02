@@ -1,8 +1,15 @@
 import { buildSchema } from 'graphql';
 
 const schema = buildSchema(`
+  type Image {
+    redditPostId: String!
+    url: String!
+    liked: Boolean
+  }
+
   type Query {
-    hello: String
+    images(userEmail: String!): [Image]
+    likedImages(userEmail: String!): [Image]
   }
 `);
 

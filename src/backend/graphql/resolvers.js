@@ -1,5 +1,27 @@
+import User from 'lib/models/user';
+import Like from 'lib/models/like';
+import Image from 'lib/models/image';
+
 const resolvers = {
-  hello: () => 'Hello world!',
+  images: async ({ userEmail: email }) => {
+    const { userId } = await User.findOne({ where: { email }, attributes: ['id'] });
+    const likedImageIds = await Like.findAll({ where: { userId }, attributes: ['imageId'] });
+    const images = await Image.findAll();
+    return images.map(image => ({
+      ...image.dataValues,
+      liked: likedImageIds.indexOf(image.id) !== -1,
+    }));
+  },
+
+  likedImages: async ({ userEmail: email }) => {
+    const userId = await User.findOne({ where: { email }, attributes: ['id'] });
+    const likedImageIds = await Like.findAll({ where: { userId }, attributes: ['imageId'] });
+    const images = await Image.findAll({ where: { id: likedImageIds } });
+    return images.map(image => ({
+      ...image.dataValues,
+      liked: true,
+    }));
+  },
 };
 
 export default resolvers;
