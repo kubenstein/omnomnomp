@@ -1,0 +1,17 @@
+@import "../../assets/stylesheets/import";
+
+.topbar {
+  position: fixed;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 30px;
+  background-color: $main;
+  box-shadow: 0 2px 2px 0px rgba(0,0,0, 0.1);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-style: italic;
+}

@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import serialize from 'form-serialize';
 
+import Topbar from 'components/Topbar';
+
 import './styles.scss';
 
 const App = ({ onLogin }) => {
@@ -15,6 +17,7 @@ const App = ({ onLogin }) => {
 
   return (
     <div className="login-wrapper">
+      <Topbar />
       <div className="login-box">
         <form
           className="form"
