@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Login from 'components/Login';
+import Board from 'components/Board';
 
 const App = ({ isLoggedIn }) => (
-  isLoggedIn ? <h1>loggedIn</h1> : <Login />
+  isLoggedIn ? <Board /> : <Login />
 );
 
 App.propTypes = {

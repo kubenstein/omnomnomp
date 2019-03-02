@@ -1,0 +1,98 @@
+@import "../../assets/stylesheets/import";
+
+.board-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding-top: 30px;
+  background-color: $background;
+
+  .content {
+    margin: 0 auto;
+    max-width: 900px;
+    width: 100%;
+    overflow: scroll;
+  }
+
+  .jumbo {
+    height: 400px;
+    width: 100%;
+    background: url('../../assets/images/board-jumbo-background.jpg') 50% 50% no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    .box-wrapper {
+      width: 100%;
+      max-width: 800px;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .box {
+      position: relative;
+      max-width: 540px;
+      top: 60px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    h1 {
+      font-size: 60px;
+      font-weight: 100;
+      color: $main;
+      word-break: break-all;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 100;
+      color: #666;
+    }
+
+    span {
+      font-size: 16px;
+      font-weight: 100;
+      color: #666;
+    }
+  }
+
+  .separator {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    background: url('../../assets/images/omnomnomp.png') 50% 50% no-repeat;
+
+    &:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 18px;
+      left: -110px;
+      height: 1px;
+      background-color: $main;
+      width: 100px;
+    }
+
+    &:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 18px;
+      left: 52px;
+      height: 1px;
+      background-color: $main;
+      width: 100px;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
