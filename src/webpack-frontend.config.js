@@ -92,6 +92,10 @@ module.exports = {
         target: 'http://localhost:8081',
         secure: false,
       },
+      '/graphql-explorer**': {
+        target: 'http://localhost:8081',
+        secure: false,
+      },
     },
   },
 

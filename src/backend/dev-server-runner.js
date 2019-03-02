@@ -1,5 +1,16 @@
+import graphqlHTTP from 'express-graphql';
 import Server from './server';
+import { schema, resolvers } from './graphql';
 
-new Server({
+
+const server = new Server({
   port: 8081,
-}).start();
+});
+
+server.app.use('/graphql-explorer', graphqlHTTP({
+  schema,
+  rootValue: resolvers,
+  graphiql: true,
+}));
+
+server.start();
