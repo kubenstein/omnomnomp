@@ -1,0 +1,44 @@
+@import "../../assets/stylesheets/import";
+
+.login-wrapper {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  background: url('../../assets/images/login-background.jpg') 50% 50% no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  .login-box {
+    &::before {
+      content: " ";
+      display: block;
+      height: 40px;
+      margin-bottom: 20px;
+      background: url('../../assets/images/omnomnomp.png') 50% 50% no-repeat;
+    }
+
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+
+    .title {
+      font-size: 16px;
+    }
+
+    input {
+      width: 100%;
+      margin: 10px 0;
+      height: 35px;
+      font-size: 16px;
+    }
+
+
+  }
+}
