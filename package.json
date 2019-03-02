@@ -8,6 +8,8 @@
     "dev:backend": "DEBUG=true webpack --watch --config ./src/webpack-backend.config.js"
   },
   "dependencies": {
+    "express": "~4.x.x",
+    "socket.io": "~2.0.x"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
