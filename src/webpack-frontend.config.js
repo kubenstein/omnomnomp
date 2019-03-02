@@ -70,6 +70,7 @@ module.exports = {
           },
           'css-loader',
           'sass-loader',
+          'resolve-url-loader',
         ],
       },
     ],
