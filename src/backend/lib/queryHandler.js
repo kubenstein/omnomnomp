@@ -1,6 +1,6 @@
-export default function queryHandler(_query, _email) {
-  const response = {
-    // ...
-  };
-  return Promise.resolve(response);
+import { graphql } from 'graphql';
+import { schema, resolvers } from '../graphql';
+
+export default function queryHandler(query, _email) {
+  return graphql(schema, query, resolvers);
 }
