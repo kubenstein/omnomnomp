@@ -10,8 +10,24 @@
   background-color: $main;
   box-shadow: 0 2px 2px 0px rgba(0,0,0, 0.1);
   z-index: 100;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: white;
-  font-style: italic;
+
+  .title {
+    font-style: italic;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .menu {
+    flex: 0 1 30px;
+    text-align: center;
+    align-self: self-end;
+    font-size: 30px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
 }

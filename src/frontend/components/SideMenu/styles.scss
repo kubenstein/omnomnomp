@@ -1,0 +1,68 @@
+@import "../../assets/stylesheets/import";
+
+.sidemenu-wrapper {
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 300;
+  }
+
+  .menu-content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $dark;
+    z-index: 301;
+    width: calc(100% - 20px);
+    max-width: 300px;
+    padding: 10px;
+  }
+
+  .close {
+    display: block;
+    width: 25px;
+    height: 25px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .user, .logout {
+    display: block;
+    margin: 20px 0 10px;
+    text-align: center;
+    color: $grey;
+    font-size: 14px;
+  }
+
+  .logout {
+    cursor: pointer;
+  }
+
+  .list {
+    .header {
+      display: block;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      color: $main;
+      border-bottom: 1px solid $main;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .image {
+      width: 40px;
+      margin: 10px;
+      border: 1px solid $grey;
+    }
+  }
+}

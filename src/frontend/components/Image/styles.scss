@@ -1,0 +1,80 @@
+@import "../../assets/stylesheets/import";
+
+@keyframes likeAnimation {
+  5%   { transform: scale(0.6); }
+  10%  { transform: scale(2.2); opacity: 1; }
+  15%  { transform: scale(1); }
+  20%  { transform: scale(1.5); }
+  25%  { transform: scale(1); }
+  40%  { transform: scale(1); opacity: 0;}
+  100% { transform: scale(1); opacity: 0;}
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  min-height: 300px;
+  margin: 10px 10px 15px 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $main;
+
+  &:last-child {
+    border-bottom: none;
+  }
+  img {
+    width: 100%;
+    border: 10px solid $grey;
+    cursor: pointer;
+  }
+
+  .like {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url('../../assets/images/omnomnomp.png') 50% 50% no-repeat;
+    pointer-events: none;
+    animation: likeAnimation 5s;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $dark;
+    z-index: 200;
+
+    img {
+      display: block;
+      width: initial;
+      height: calc(100% - 100px);
+      margin: 0 auto;
+      border: 10px solid $main;
+      cursor: pointer;
+    }
+
+    small {
+      display: block;
+      margin-top: 10px;
+      color: $white;
+      text-align: center;
+    }
+
+    .close {
+      position: fixed;
+      display: block;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      color: white;
+      text-align: center;
+      font-size: 50px;
+      cursor: pointer;
+    }
+  }
+}
