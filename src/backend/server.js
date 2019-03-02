@@ -1,8 +1,8 @@
 import path from 'path';
 import express from 'express';
 import SocketIo from 'socket.io';
-import configureUser from './lib/configureUser';
-import queryHandler from './lib/queryHandler';
+import configureUser from './lib/configure-user';
+import queryHandler from './lib/query-handler';
 
 export default class Server {
   constructor(params) {
