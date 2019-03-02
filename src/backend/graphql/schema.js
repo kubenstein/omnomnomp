@@ -2,7 +2,8 @@ import { buildSchema } from 'graphql';
 
 const schema = buildSchema(`
   type Image {
-    redditPostId: String!
+    redditPostUrl: String!
+    title: String!
     url: String!
     liked: Boolean
   }

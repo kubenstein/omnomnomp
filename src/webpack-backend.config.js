@@ -17,11 +17,11 @@ fs.readdirSync('node_modules')
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
   target: 'node',
-  entry: `${backendDir}/dev-server-runner.js`,
+  entry: process.env.ENTRY || `${backendDir}/dev-server-runner.js`,
   output: {
     path: `${rootDir}/.tmp/backend/`,
     publicPath: '/',
-    filename: 'bundled-server-runner.js',
+    filename: process.env.OUTPUT_FILENAME || 'bundled-server-runner.js',
   },
   node: {
     __dirname: false,

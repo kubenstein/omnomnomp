@@ -2,7 +2,8 @@ import Sequelize from 'sequelize';
 import db from 'lib/db-connection';
 
 const Image = db.define('image', {
-  redditPostId: Sequelize.STRING,
+  redditPostUrl: Sequelize.STRING,
+  title: Sequelize.STRING,
   url: Sequelize.STRING,
 });
 

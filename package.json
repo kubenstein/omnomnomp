@@ -6,11 +6,13 @@
   "scripts": {
     "dev:frontend": "webpack-dev-server --config ./src/webpack-frontend.config.js",
     "dev:backend": "DATABSE_URL=sqlite:./db/data/dev.db DEBUG=true webpack --watch --config ./src/webpack-backend.config.js",
-    "dev:db:migrate": "DATABSE_URL=sqlite:./db/data/dev.db node ./src/scripts/db-migrate.js"
+    "dev:db:migrate": "DATABSE_URL=sqlite:./db/data/dev.db node ./src/scripts/db-migrate.js",
+    "dev:db:populateImages": "ENTRY=./src/scripts/db-populate-images OUTPUT_FILENAME='__task-populate-images.js' webpack --progress --config ./src/webpack-backend.config.js && DATABSE_URL=sqlite:./db/data/dev.db node ./.tmp/backend/__task-populate-images.js"
   },
   "dependencies": {
     "express": "~4.x.x",
     "graphql": "^14.1.1",
+    "node-fetch": "^2.3.0",
     "sequelize": "^4.42.1",
     "socket.io": "~2.0.x",
     "umzug": "^2.2.0"
