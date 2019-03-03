@@ -16,6 +16,11 @@ const Sidemenu = ({ userEmail, likedImages, fetchImages, close, logout }) => {
 
       <div className="menu-content">
         <FunctionLink className="close" onClick={close}>✖</FunctionLink>
+        <span className="promo">
+          Jakub Niewczas
+          <br />
+          Sr. FullStack Dev
+        </span>
         <span className="user">{userEmail}</span>
         <FunctionLink className="logout" onClick={logout}>logout</FunctionLink>
 
