@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import connect from 'lib/appState/connect';
 
 import Component from './component';
@@ -5,7 +6,10 @@ import Component from './component';
 const mapStateToProps = ({ likedImages = [] }, _props, updateState) => ({
   userEmail: 'niewczas.jakub@gmail.com',
   likedImages,
-  logout: () => {},
+  logout: () => {
+    Cookies.remove('email');
+    updateState({ isSidemenuOpen: false, userEmail: null });
+  },
   close: () => updateState({ isSidemenuOpen: false }),
   fetchImages: () => {
     //
