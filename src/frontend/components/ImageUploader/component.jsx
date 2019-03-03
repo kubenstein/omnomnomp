@@ -16,6 +16,12 @@ const ImageUploader = ({ onSubmit }) => {
   const [isUploading, setUploading] = useState(false);
   const [photoUrl, setPhotoUrl] = useState(null);
 
+  const reset = () => {
+    setPhotoUrl(null);
+    setValid(false);
+    setUploading(false);
+  };
+
   const handleFileUpload = () => {
     setUploading(true);
     const file = fileInputRef.current.files[0];
@@ -26,13 +32,11 @@ const ImageUploader = ({ onSubmit }) => {
         setPhotoUrl(response.data.photoUrl);
         setValid(true);
         setUploading(false);
-      });
+      }).catch(reset);
   };
 
   const onClose = () => {
-    setPhotoUrl(null);
-    setValid(false);
-    setUploading(false);
+    reset();
     open(false);
   };
 
