@@ -6,7 +6,7 @@ import Component from './component';
 const mapStateToProps = (_state, _props, updateState) => ({
   onLogin: (email) => {
     Cookies.set('email', email);
-    updateState('isLoggedIn', true);
+    updateState('userEmail', email);
   },
 });
 

@@ -9,7 +9,7 @@ import App from 'components/App';
 import './assets';
 
 const initialState = {
-  isLoggedIn: !!Cookies.get('email'),
+  userEmail: !!Cookies.get('email'),
 };
 
 ReactDOM.render(
