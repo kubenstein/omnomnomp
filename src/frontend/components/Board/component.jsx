@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+import FunctionLink from 'components/FunctionLink';
 import Topbar from 'components/Topbar';
 import Image from 'components/Image';
+
 import { imageShape } from 'lib/shapes';
 
 import './styles.scss';
 
-const Board = ({ images, fetchImages }) => {
+const Board = ({ images, fetchImages, loadMore }) => {
   useEffect(fetchImages, []);
 
   return (
@@ -31,8 +33,10 @@ const Board = ({ images, fetchImages }) => {
 
           <div className="list">
             {images.map(image => (
-              <Image key={image.url} image={image} />
+              <Image key={image.redditPostUrl} image={image} />
             ))}
+
+            <FunctionLink className="btn" onClick={loadMore}>Load More!</FunctionLink>
           </div>
         </div>
       </div>
@@ -43,6 +47,7 @@ const Board = ({ images, fetchImages }) => {
 Board.propTypes = {
   images: PropTypes.arrayOf(imageShape).isRequired,
   fetchImages: PropTypes.func.isRequired,
+  loadMore: PropTypes.func.isRequired,
 };
 
 export default Board;
