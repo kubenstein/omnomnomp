@@ -7,7 +7,7 @@ import { imageShape } from 'lib/shapes';
 
 import './styles.scss';
 
-const App = ({ images, fetchImages }) => {
+const Board = ({ images, fetchImages }) => {
   useEffect(fetchImages, []);
 
   return (
@@ -40,9 +40,9 @@ const App = ({ images, fetchImages }) => {
   );
 };
 
-App.propTypes = {
+Board.propTypes = {
   images: PropTypes.arrayOf(imageShape).isRequired,
   fetchImages: PropTypes.func.isRequired,
 };
 
-export default App;
+export default Board;

@@ -6,7 +6,7 @@ import Topbar from 'components/Topbar';
 
 import './styles.scss';
 
-const App = ({ onLogin }) => {
+const Login = ({ onLogin }) => {
   const formRef = useRef(null);
 
   const submit = (e) => {
@@ -33,8 +33,8 @@ const App = ({ onLogin }) => {
   );
 };
 
-App.propTypes = {
+Login.propTypes = {
   onLogin: PropTypes.func.isRequired,
 };
 
-export default App;
+export default Login;
