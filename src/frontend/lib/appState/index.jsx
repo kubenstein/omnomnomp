@@ -10,7 +10,7 @@ const StateProvider = ({ children, initialState }) => {
 
   const context = {
     state,
-    updateState: (key, value) => setState({ ...state, [key]: value }),
+    updateState: keyValueObj => setState({ ...state, ...keyValueObj }),
   };
 
   return (

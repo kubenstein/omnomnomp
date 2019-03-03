@@ -8,7 +8,7 @@ const mapStateToProps = ({ images = [] }, _props, updateState) => ({
     //
     // ... fetch from graphql
 
-    updateState('images', [
+    updateState({ images: [
       {
         redditPostUrl: '/r/FoodPorn/comments/80m2mb/my_second_attempt_at_ramen_this_time_its_shoyu/',
         title: 'Its taken a ton of testing to get here, but these really are the ultimate big, soft, and supe',
@@ -21,7 +21,7 @@ const mapStateToProps = ({ images = [] }, _props, updateState) => ({
         url: 'https://i.redd.it/u17jr74gucl01.jpg',
         liked: false,
       },
-    ]);
+    ] });
   },
 });
 
