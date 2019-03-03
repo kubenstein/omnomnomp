@@ -12,10 +12,10 @@ export default class Server {
   }
 
   start() {
-    this.server = this.app.listen(this.serverPort);
+    this.server = this.app.listen(this.serverPort, '0.0.0.0');
     const io = SocketIo(this.server);
 
-    this.app.use(express.static(path.resolve(`${__dirname}/frontend/`)));
+    this.app.use(express.static(path.resolve(`${__dirname}/../frontend/`)));
 
     io.on('connection', (socket) => {
       const { handshake: { query: { email } } } = socket;

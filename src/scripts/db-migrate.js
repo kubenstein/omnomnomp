@@ -10,7 +10,12 @@ const scriptsDir = __dirname;
 const srcDir = `${scriptsDir}/../`;
 const dbDir = `${srcDir}/../db/`;
 
-const sequelize = new Sequelize(process.env.DATABSE_URL);
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  ssl: true,
+  dialectOptions: {
+    ssl: true,
+  },
+});
 const umzug = new Umzug({
   storage: 'sequelize',
 

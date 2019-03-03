@@ -2,7 +2,7 @@
 const fs = require('fs-extra');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const env = process.env.NODE_ENV;
 const srcDir = __dirname;
@@ -11,10 +11,7 @@ const frontendDir = `${srcDir}/frontend/`;
 
 var path;
 if (env === 'production') {
-  path = `${rootDir}/dist/frontend`;
-  fs.removeSync(path);
-} else if (env === 'test') {
-  path = `${rootDir}/.tmp/specs/src/frontend`;
+  path = `${rootDir}/frontend`;
   fs.removeSync(path);
 }
 
@@ -102,11 +99,11 @@ module.exports = {
 
   stats: { children: false },
   optimization: {
-    minimizer: (env === 'production' || env === 'test') ? [
-      new UglifyJsPlugin(),
+    minimizer: (env === 'production') ? [
+      new OptimizeCSSAssetsPlugin({}),
     ] : [],
   },
-  plugins: (env === 'production' || env === 'test') ? [
+  plugins: (env === 'production') ? [
     new MiniCssExtractPlugin({ filename: 'web.bundle.css' }),
     new webpack.DefinePlugin({
       'process.env': {

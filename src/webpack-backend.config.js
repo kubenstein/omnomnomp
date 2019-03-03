@@ -3,6 +3,7 @@
 const fs = require('fs');
 const NodemonPlugin = require('nodemon-webpack-plugin');
 
+const env = process.env.NODE_ENV;
 const srcDir = __dirname;
 const rootDir = `${srcDir}/../`;
 const backendDir = `${srcDir}/backend/`;
@@ -19,7 +20,7 @@ module.exports = {
   target: 'node',
   entry: process.env.ENTRY || `${backendDir}/dev-server-runner.js`,
   output: {
-    path: `${rootDir}/.tmp/backend/`,
+    path: env === 'production' ? `${rootDir}/backend/` : `${rootDir}/.tmp/backend/`,
     publicPath: '/',
     filename: process.env.OUTPUT_FILENAME || 'bundled-server-runner.js',
   },
