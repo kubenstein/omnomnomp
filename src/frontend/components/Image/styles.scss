@@ -22,6 +22,7 @@
   &:last-child {
     border-bottom: none;
   }
+
   img {
     width: 100%;
     border: 10px solid $grey;
@@ -41,17 +42,21 @@
 
   .modal {
     position: fixed;
+    display: flex;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    flex-direction: column;
+    justify-content: center;
     background-color: $dark;
     z-index: 200;
 
     img {
       display: block;
       width: initial;
-      height: calc(100% - 100px);
+      max-width: 90%;
+      max-height: calc(100% - 240px);
       margin: 0 auto;
       border: 10px solid $main;
       cursor: pointer;
