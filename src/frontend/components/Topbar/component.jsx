@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import FunctionLink from 'components/FunctionLink';
 import SideMenu from 'components/SideMenu';
 
-import 'components/Topbar/styles.scss';
+import './styles.scss';
 
 const Topbar = ({ isLoggedIn, isOpen, toggle }) => (
   <>
