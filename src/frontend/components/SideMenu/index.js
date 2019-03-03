@@ -17,23 +17,17 @@ const mapStateToProps = ({ socket, userEmail, likedImages = [] }, _props, update
   },
   close: () => updateState({ isSidemenuOpen: false }),
   fetchImages: () => {
-    //
-    // ... fetch from graphql
-
-    updateState({ likedImages: [
-      {
-        redditPostUrl: '/r/FoodPorn/comments/80m2mb/my_second_attempt_at_ramen_this_time_its_shoyu/',
-        title: 'Its taken a ton of testing to get here, but these really are the ultimate big, soft, and supe',
-        url: 'https://i.redd.it/yhhj3uie5hm11.jpg',
-        liked: false,
-      },
-      {
-        redditPostUrl: '/r/FoodPorn/comments/80m2mb/my_second_attempt_at_ramen_this_time_its_shoyu/',
-        title: 'Its taken a ton of testing to get here, but these really are the ultimate big, soft, and supe',
-        url: 'https://i.redd.it/u17jr74gucl01.jpg',
-        liked: false,
-      },
-    ] });
+    const query = `
+      query {
+        images : likedImages(userEmail: "${userEmail}") {
+          id
+          url
+          title
+          redditPostUrl
+        }
+      }
+    `;
+    socket.emit('query', query, response => updateState({ likedImages: response.data.images }));
   },
 });
 
