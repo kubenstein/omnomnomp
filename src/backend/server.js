@@ -1,8 +1,13 @@
 import path from 'path';
 import express from 'express';
+import multer from 'multer';
+import bodyParser from 'body-parser';
 import SocketIo from 'socket.io';
+import { v2 as cloudinary } from 'cloudinary';
 import configureUser from './lib/configure-user';
 import queryHandler from './lib/query-handler';
+
+const upload = multer({ dest: '/tmp/multer' });
 
 export default class Server {
   constructor(params) {
@@ -16,6 +21,17 @@ export default class Server {
     const io = SocketIo(this.server);
 
     this.app.use(express.static(path.resolve(`${__dirname}/../frontend/`)));
+    this.app.use(bodyParser.json());
+
+    this.app.post('/photos/', upload.single('photo'), (req, res) => {
+      const imageFile = req.file.path;
+      cloudinary.uploader.upload(imageFile)
+        .then((image) => {
+          res.send({ photoUrl: image.url });
+        }).catch(() => {
+          res.send(422, 'Unprocessable Entity');
+        });
+    });
 
     io.on('connection', (socket) => {
       const { handshake: { query: { email } } } = socket;

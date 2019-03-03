@@ -94,6 +94,10 @@ module.exports = {
         target: 'http://localhost:8081',
         secure: false,
       },
+      '/photos**': {
+        target: 'http://localhost:8081',
+        secure: false,
+      },
     },
   },
 
