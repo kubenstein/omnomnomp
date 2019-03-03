@@ -3,12 +3,17 @@ import connect from 'lib/appState/connect';
 
 import Component from './component';
 
-const mapStateToProps = ({ userEmail, likedImages = [] }, _props, updateState) => ({
+const mapStateToProps = ({ socket, userEmail, likedImages = [] }, _props, updateState) => ({
   userEmail,
   likedImages,
   logout: () => {
     Cookies.remove('email');
-    updateState({ isSidemenuOpen: false, userEmail: null });
+    socket.disconnect();
+    updateState({
+      isSidemenuOpen: false,
+      userEmail: null,
+      socket: null,
+    });
   },
   close: () => updateState({ isSidemenuOpen: false }),
   fetchImages: () => {
