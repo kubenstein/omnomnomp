@@ -41,8 +41,8 @@ const App = ({ images, fetchImages }) => {
 };
 
 App.propTypes = {
-  images: PropTypes.arrayOf(imageShape),
-  fetchImages: PropTypes.func,
+  images: PropTypes.arrayOf(imageShape).isRequired,
+  fetchImages: PropTypes.func.isRequired,
 };
 
 export default App;

@@ -27,7 +27,7 @@ const Topbar = ({ isLoggedIn, isOpen, toggle }) => (
 Topbar.propTypes = {
   isLoggedIn: PropTypes.bool,
   isOpen: PropTypes.bool,
-  toggle: PropTypes.func,
+  toggle: PropTypes.func.isRequired,
 };
 
 export default Topbar;

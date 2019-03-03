@@ -34,11 +34,11 @@ const Sidemenu = ({ userEmail, likedImages, fetchImages, close, logout }) => {
 };
 
 Sidemenu.propTypes = {
-  userEmail: PropTypes.string,
-  likedImages: PropTypes.arrayOf(imageShape),
-  fetchImages: PropTypes.func,
-  close: PropTypes.func,
-  logout: PropTypes.func,
+  userEmail: PropTypes.string.isRequired,
+  likedImages: PropTypes.arrayOf(imageShape).isRequired,
+  fetchImages: PropTypes.func.isRequired,
+  close: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
 };
 
 export default Sidemenu;
