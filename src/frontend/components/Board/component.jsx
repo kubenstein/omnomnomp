@@ -33,7 +33,7 @@ const Board = ({ images, fetchImages, loadMore }) => {
 
           <div className="list">
             {images.map(image => (
-              <Image key={image.redditPostUrl} image={image} />
+              <Image key={image.id} image={image} />
             ))}
 
             <FunctionLink className="btn" onClick={loadMore}>Load More!</FunctionLink>

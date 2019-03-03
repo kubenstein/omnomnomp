@@ -23,7 +23,6 @@ const mapStateToProps = ({ socket, userEmail, likedImages = [] }, _props, update
           id
           url
           title
-          redditPostUrl
         }
       }
     `;

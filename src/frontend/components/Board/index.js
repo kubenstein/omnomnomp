@@ -10,7 +10,6 @@ const mapStateToProps = ({ images = [], socket, userEmail }, _props, updateState
           id
           url
           title
-          redditPostUrl
         }
       }
     `;

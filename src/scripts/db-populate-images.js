@@ -17,11 +17,11 @@ const importRedditPage = (after) => {
     .then((response) => {
       const { children, after: nextAfter } = response.data;
       children.forEach((post) => {
-        const { permalink: redditPostUrl, title, url, domain } = post.data;
+        const { title, url, domain } = post.data;
 
         if (domain !== 'i.redd.it') return;
 
-        Image.build({ redditPostUrl, title, url }).save();
+        Image.build({ title, url }).save();
       });
 
       importRedditPage(nextAfter);

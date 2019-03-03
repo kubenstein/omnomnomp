@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 export const imageShape = PropTypes.shape({
-  redditPostUrl: PropTypes.string,
+  id: PropTypes.number,
   title: PropTypes.string,
   url: PropTypes.string,
   liked: PropTypes.bool,

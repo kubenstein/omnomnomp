@@ -10,7 +10,6 @@ const mapStateToProps = ({ socket, likedImages = [], userEmail }, { image: { id 
         id
         url
         title
-        redditPostUrl
       }
     }
     `;
