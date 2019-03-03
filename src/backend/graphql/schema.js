@@ -13,6 +13,10 @@ const schema = buildSchema(`
     images(userEmail: String!, fromId: Int): [Image]
     likedImages(userEmail: String!): [Image]
   }
+
+  type Mutation {
+    like(userEmail: String!, imageId: Int!): Image
+  }
 `);
 
 export default schema;
