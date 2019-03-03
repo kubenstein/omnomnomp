@@ -56,7 +56,8 @@
 
     .content {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: wrap;      
+      align-items: flex-start;
     }
 
     .image {

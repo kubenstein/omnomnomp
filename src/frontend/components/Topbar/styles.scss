@@ -21,10 +21,15 @@
   }
 
   .menu {
+    position: relative;
+    display: flex;
     flex: 0 1 30px;
-    text-align: center;
+    top: -2px;
+    height: 30px;
     align-self: self-end;
-    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
