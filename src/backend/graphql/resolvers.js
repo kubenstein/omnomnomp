@@ -38,6 +38,14 @@ const resolvers = {
       liked: true,
     }));
   },
+
+  addImage: async ({ userEmail: _, url, title }) => {
+    const [image] = await Image.findOrCreate({ where: { url, title } });
+    return {
+      ...image.dataValues,
+      liked: false,
+    };
+  },
 };
 
 export default resolvers;

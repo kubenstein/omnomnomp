@@ -49,7 +49,7 @@ const Image = ({ image, onDoubleClick }) => {
             { wasJustLiked && <div className="like" />}
             <img alt="delicious food" src={image.url} />
           </FunctionLink>
-          <small>{image.title}</small>
+          <small>{image.title || ''}</small>
         </div>
       )}
       <FunctionLink onClick={onImgClick}>

@@ -15,6 +15,7 @@ const schema = buildSchema(`
 
   type Mutation {
     like(userEmail: String!, imageId: Int!): Image
+    addImage(userEmail: String!, url: String!, title: String): Image
   }
 `);
 

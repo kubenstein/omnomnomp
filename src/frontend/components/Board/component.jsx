@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import FunctionLink from 'components/FunctionLink';
 import Topbar from 'components/Topbar';
 import Image from 'components/Image';
+import ImageUploader from 'components/ImageUploader';
 
 import { imageShape } from 'lib/shapes';
 
@@ -40,6 +41,7 @@ const Board = ({ images, fetchImages, loadMore }) => {
           </div>
         </div>
       </div>
+      <ImageUploader />
     </>
   );
 };

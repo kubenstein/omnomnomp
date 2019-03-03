@@ -1,0 +1,75 @@
+@import "../../assets/stylesheets/import";
+
+.imageuploader-trigger {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 15px;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  border-radius: 35px;
+  background: $dark url('../../assets/images/image-uploader-camera.png') 50% 50% no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.imageuploader {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  flex-direction: column;
+  background-color: $dark;
+  z-index: 200;
+
+  .close {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+  .photo-input {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &.empty {
+      background: $dark url('../../assets/images/image-uploader-drop-camera.png') 50% 50% no-repeat;
+      background-size: 30%;
+    }
+
+    img {
+      max-height: 230px;
+    }
+
+    .file-input {
+      display: none;
+    }
+  }
+
+  .title {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 10px;
+  }
+
+  .btn {
+    margin: 20px 0;
+    font-size: 25px;
+  }
+}
