@@ -21,9 +21,9 @@ const Board = ({ images, fetchImages, loadMore }) => {
             <div className="box">
               <h1>Omnomnomp!</h1>
               <span>
-                Fantasticlicious! A Picture says more than thousands words!
+                Fantasticlicious! Single picture says more than a thousands of words!
                 Omnomnomp is a place where you can browse and like absolutely fantastic food.
-                Browse, Like, want, eat!
+                Browse, Like, Want, Eat!
               </span>
             </div>
           </div>

@@ -24,6 +24,10 @@ const Login = ({ onLogin }) => {
           ref={formRef}
           onSubmit={submit}
         >
+          <span className="welcomeText">
+            <span>Omnomnomp </span>
+            Browse, Like, Want, Eat!
+          </span>
           <h1 className="title">Login / SignUp:</h1>
           <input className="input" name="email" type="email" placeholder="Email..." />
           <input className="btn btn-success" type="submit" value="log in" />
