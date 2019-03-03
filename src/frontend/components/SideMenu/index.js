@@ -3,8 +3,8 @@ import connect from 'lib/appState/connect';
 
 import Component from './component';
 
-const mapStateToProps = ({ likedImages = [] }, _props, updateState) => ({
-  userEmail: 'niewczas.jakub@gmail.com',
+const mapStateToProps = ({ userEmail, likedImages = [] }, _props, updateState) => ({
+  userEmail,
   likedImages,
   logout: () => {
     Cookies.remove('email');
