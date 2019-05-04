@@ -1,5 +1,7 @@
-Omnomnomp
+omnomnomp.jakubniewczas.pl
 =============
+
+http://omnomnomp.jakubniewczas.pl/
 
 A fun, weekend self-hackathon I made for myself to learn about grapthQL and experiment with React hooks
 
